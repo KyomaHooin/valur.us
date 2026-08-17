@@ -1,0 +1,13 @@
+encoding: UTF-8
+
+header_pages:
+        - about
+        - tech
+        - cyber
+        - poi
+        - book
+        - sound
+        - other
+
+footer: '&#960;'
+
