@@ -22,7 +22,7 @@
 			<a class="nav-link my-1 text-light" href="/">{{ path | capitalize }}</a>
 		{%- elsif path == 'poi' -%}
 			<a class="nav-link my-1 text-light active" aria-current="page" href="{{ '/' | append: path  }}">{{ path | capitalize }}</a>
-		{% else %}
+		{%- else -%}
 			<a class="nav-link my-1 text-light" href="{{ '/' | append: path }}">{{ path | capitalize }}</a>
 		{%- endif -%}
 	{%- endfor -%}
@@ -33,7 +33,7 @@
 
 <div class="col p-3 bg-light">
 
-<p class="h2 fw-bold text-black text-break">Index of /{{ page.dir | split: '/' | shift | shift | join: '/' }}/</p>
+<p class="h2 fw-bold text-black text-break">Index of /{{ page.dir }}/</p>
 
 <table class="table table-light table-borderless table-sm border-bottom border-dark">
 <thead class="border-bottom border-dark">
@@ -45,7 +45,7 @@
 <tbody>
 	<tr class="d-flex justify-content-start">
 		<td class="py-1 bg-light"><img class="img-fluid" src="{{ '/assets/icons/back.gif' | relative_path }}"></td>
-		<td class="py-1 bg-light"><a class="text-dark" href="{{ page.dir | split: '/' | pop | join: '/' }}">Parent Directory</a></td>
+		<td class="py-1 bg-light"><a class="text-dark" href="{{ page.dir | split: '/' | pop | join: '/' | relative_path }}">Parent Directory</a></td>
 	</tr>
 
 {%- assign page_depth = page.dir | split: '/' | size | plus: 1 -%}
@@ -68,7 +68,7 @@
 			{%- if next_subfolder != prev_subfolder -%}
 				<tr class="d-flex justify-content-start">
 					<td class="py-1 bg-light"><img class="img-fluid" src="{{ '/assets/icons/folder.gif' | relative_path }}"></td>
-					<td class="py-1 bg-light"><a class="text-black" href="{{ next_subfolder | join: '/' }}">{{ next_subfolder | last }}/</a></td>
+					<td class="py-1 bg-light"><a class="text-black" href="{{ next_subfolder | join: '/' | relative_path }}">{{ next_subfolder | last }}/</a></td>
 				</tr>
 				{%- assign prev_subfolder = next_subfolder -%}
 			{%- endif -%}
@@ -97,7 +97,7 @@
 			<img class="img-fluid" src="{{ '/assets/icons/unknown.gif' | relative_path }}">
 		{%- endcase -%}
 		</td>
-		<td class="py-1 bg-light"><a class="text-black" href="{{ file.path }}">{{ file.name }}</a></td>
+		<td class="py-1 bg-light"><a class="text-black" href="{{ file.path | relative_path }}">{{ file.name }}</a></td>
 	</tr>
 	{%- endif -%}
 	{%- endif -%}
