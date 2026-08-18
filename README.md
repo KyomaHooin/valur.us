@@ -4,9 +4,9 @@ DESCRIPTION
 Old website replica.
 
 FILE
-
-/Poi/ - Original structure and files.
-
+<pre>
+Poi/ ... Original structure and files.
+</pre>
 SOURCE
 
 https://github.com/KyomaHooin/valur.us
