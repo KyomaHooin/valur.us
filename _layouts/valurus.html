@@ -45,7 +45,7 @@
 <tbody>
 	<tr class="d-flex justify-content-start">
 		<td class="py-1 bg-light"><img class="img-fluid" src="{{ '/assets/icons/back.gif' | relative_url }}"></td>
-		<td class="py-1 bg-light"><a class="text-dark" href="{{ page.dir | split: '/' | pop | join: '/' | relative_url }}">Parent Directory</a></td>
+		<td class="py-1 bg-light"><a class="text-dark" href="{{ page.dir | split: '/' | pop | join: '/' | relative_url | append: '/' }}">Parent Directory</a></td>
 	</tr>
 
 {%- assign page_depth = page.dir | split: '/' | size | plus: 1 -%}
@@ -68,7 +68,7 @@
 			{%- if next_subfolder != prev_subfolder -%}
 				<tr class="d-flex justify-content-start">
 					<td class="py-1 bg-light"><img class="img-fluid" src="{{ '/assets/icons/folder.gif' | relative_url }}"></td>
-					<td class="py-1 bg-light"><a class="text-black" href="{{ next_subfolder | join: '/' | relative_url }}">{{ next_subfolder | last }}/</a></td>
+					<td class="py-1 bg-light"><a class="text-black" href="{{ next_subfolder | join: '/' | relative_url | append: '/' }}">{{ next_subfolder | last }}/</a></td>
 				</tr>
 				{%- assign prev_subfolder = next_subfolder -%}
 			{%- endif -%}
