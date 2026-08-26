@@ -86,15 +86,15 @@
 		<td class="py-1 bg-light">
 		{%- case file.extname -%}
 		{%- when ".pdf", ".txt", ".doc", ".docx" -%}
-			<img class="img-fluid" src="{{ '/assets/icons/layout.gif' | relative_url }}">
+			<img class="img-fluid" src="{{ '/assets/icons/layout.gif' | relative_url }}" alt="layout.gif">
 		{%- when ".png", ".gif", ".jpg", ".jpeg" -%}
-			<img class="img-fluid" src="{{ '/assets/icons/image.gif' | relative_url }}">
+			<img class="img-fluid" src="{{ '/assets/icons/image.gif' | relative_url }}" alt="image.gif">
 		{%- when ".zip", ".tar", ".gz", ".tgz", ".rar" -%}
-			<img class="img-fluid" src="{{ '/assets/icons/compressed.gif' | relative_url }}">
+			<img class="img-fluid" src="{{ '/assets/icons/compressed.gif' | relative_url }}" alt="compressed.gif">
 		{%- when ".exe", ".iso" -%}
-			<img class="img-fluid" src="{{ '/assets/icons/binary.gif' | relative_url }}">
+			<img class="img-fluid" src="{{ '/assets/icons/binary.gif' | relative_url }}" alt="binary.gif">
 		{%- else -%}
-			<img class="img-fluid" src="{{ '/assets/icons/unknown.gif' | relative_url }}">
+			<img class="img-fluid" src="{{ '/assets/icons/unknown.gif' | relative_url }}" alt="unknown.gif">
 		{%- endcase -%}
 		</td>
 		<td class="py-1 bg-light"><a class="text-black text-break" href="{{ file.path | relative_url }}">{{ file.name }}</a></td>
