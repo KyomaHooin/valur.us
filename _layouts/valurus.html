@@ -67,7 +67,7 @@
 
 			{%- if next_subfolder != prev_subfolder -%}
 				<tr class="d-flex justify-content-start">
-					<td class="py-1 bg-light"><img class="img-fluid" src="{{ '/assets/icons/folder.gif' | relative_url }}"></td>
+					<td class="py-1 bg-light"><img class="img-fluid" src="{{ '/assets/icons/folder.gif' | relative_url }}" alt="folder.gif"></td>
 					<td class="py-1 bg-light"><a class="text-black" href="{{ next_subfolder | join: '/' | relative_url | append: '/' }}">{{ next_subfolder | last }}/</a></td>
 				</tr>
 				{%- assign prev_subfolder = next_subfolder -%}
