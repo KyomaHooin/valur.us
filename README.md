@@ -1,7 +1,7 @@
 
 DESCRIPTION
 
-Old website replica.
+Old website.
 
 FILE
 <pre>
